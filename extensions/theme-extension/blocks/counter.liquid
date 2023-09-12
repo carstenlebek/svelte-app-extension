@@ -1,0 +1,26 @@
+{% liquid
+  # Relative to entrypointsDir
+  render 'vite-tag' with 'main.ts'
+%}
+
+<svelte-counter
+  backgroundColor="{{ block.settings.backgroundColor }}"
+  color="{{ block.settings.color }}"
+  rounded="{{ block.settings.rounded }}"
+></svelte-counter>
+
+<script>
+  const home = {{ request.path | json }}
+</script>
+
+{% schema %}
+{
+  "name": "Sample Svelte Extension",
+  "target": "section",
+  "settings": [
+    { "type": "color", "id": "color", "label": "Text color", "default": "#000000" },
+    { "type": "color", "id": "backgroundColor", "label": "Background color", "default": "#ffffff" },
+    { "type": "checkbox", "id": "rounded", "label": "Rounded corners", "default": true }
+  ]
+}
+{% endschema %}

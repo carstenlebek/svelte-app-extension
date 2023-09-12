@@ -1,0 +1,27 @@
+{
+	"name": "svelte-app-extension",
+	"version": "1.0.0",
+	"license": "UNLICENSED",
+	"scripts": {
+		"dev": "run-p -sr vite:dev shopify:dev",
+		"build": "run-s vite:build shopify:build",
+		"deploy": "run-s vite:build cleanup shopify:deploy",
+		"shopify": "shopify",
+		"shopify:build": "shopify app build",
+		"shopify:dev": "shopify app dev",
+		"shopify:info": "shopify app info",
+		"shopify:generate": "shopify app generate",
+		"shopify:deploy": "shopify app deploy",
+		"vite:dev": "cd theme-extension && vite",
+		"vite:build": "cd theme-extension && vite build",
+		"cleanup": "rimraf --glob extensions/*/assets/*.{json,geetkeep}"
+	},
+	"dependencies": {
+		"@shopify/app": "3.49.2",
+		"@shopify/cli": "3.49.2",
+		"npm-run-all": "^4.1.5",
+		"rimraf": "^5.0.1"
+	},
+	"author": "carsten",
+	"private": true
+}
