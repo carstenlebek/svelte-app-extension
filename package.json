@@ -14,7 +14,10 @@
 		"shopify:deploy": "shopify app deploy",
 		"vite:dev": "cd theme-extension && vite",
 		"vite:build": "cd theme-extension && vite build",
-		"cleanup": "rimraf --glob extensions/*/assets/*.{json,geetkeep}"
+		"cleanup": "rimraf --glob extensions/*/assets/*.{json,geetkeep}",
+		"config:link": "shopify app config link",
+		"config:push": "shopify app config push",
+		"config:use": "shopify app config use"
 	},
 	"dependencies": {
 		"@shopify/app": "3.49.2",
